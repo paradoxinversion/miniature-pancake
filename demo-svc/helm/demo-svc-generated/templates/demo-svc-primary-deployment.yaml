@@ -14,15 +14,17 @@ spec:
       creationTimestamp: null
       labels:
         app: demo-svc-primary
+        app.kubernetes.io/component: api
         app.kubernetes.io/instance: demo-svc-canary
         app.kubernetes.io/managed-by: Keptn
         app.kubernetes.io/name: demo-svc-primary
+        app.kubernetes.io/part-of: demo
         app.kubernetes.io/version: latest
     spec:
       containers:
       - env:
         - name: DT_CUSTOM_PROP
-          value: version=0.1.0 revision=1 releasename=demo-staging-demo-svc keptn_project=demo
+          value: version=0.1.0 revision=3 releasename=demo-staging-demo-svc keptn_project=demo
             keptn_service=demo-svc keptn_stage=staging keptn_deployment=primary
         - name: POD_NAME
           valueFrom:
